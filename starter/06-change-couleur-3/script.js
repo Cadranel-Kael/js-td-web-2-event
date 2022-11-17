@@ -9,3 +9,17 @@ EXERCICE 6 : Change couleur (3)
 */
 
 // ÉTAPE 1 : on ne gère que le clic
+
+function getInput(e) {
+    e.preventDefault();
+    document.body.style.background = document.getElementById('colorChoice').value;
+}
+
+document.getElementById('colorBtn').addEventListener('click', getInput);
+
+document.body.addEventListener('keydown', (e) => {
+    console.log(e.key);
+    if (e.key === 'Enter') {
+        getInput(e);
+    }
+});

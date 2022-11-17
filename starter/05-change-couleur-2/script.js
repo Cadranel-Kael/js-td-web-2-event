@@ -19,3 +19,22 @@ touche = touche.toUpperCase(); // Pour gérer indifféremment minuscules et maju
  => il existe une méthode plus directe, voir documentation : 
  https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent
 */
+
+document.body.addEventListener('keydown', (e) => {
+    let color;
+    switch (e.key) {
+        case 'r' :
+            color = 'red';
+            break;
+        case 'v' :
+            color = 'green';
+            break;
+        case 'j' :
+            color = 'yellow';
+            break;
+        case 'b' :
+            color = 'blue';
+            break;
+    }
+    document.body.style.backgroundColor = color;
+})

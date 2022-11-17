@@ -14,3 +14,14 @@ AIDE : voici les étapes :
 5. En fin de longueur du tableau, on redémarre au début de l'index
 */
 
+const gallery = ['bell.svg','clock.svg', 'compass.svg', 'kiss.svg', 'kiss-wink-heart.svg', 'lemon.svg', 'map.svg'];
+let imgI = 0;
+
+document.querySelector('.material .actions').addEventListener('click', () => {
+    if (imgI > gallery.length-2) {
+        imgI = 0;
+    } else {
+        imgI++;
+    }
+    document.querySelector('img').src = `./img/${gallery[imgI]}`;
+});

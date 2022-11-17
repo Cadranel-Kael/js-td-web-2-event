@@ -31,3 +31,11 @@ La méthode classique est de créer une variable temporaire, comme ceci :
 
 
 // BONUS : switch entre les deux images
+
+const img = document.querySelector('.material img');
+
+img.addEventListener('click', () => {
+    const src = img.src;
+    img.src = img.getAttribute('data-hover');
+    img.setAttribute('data-hover', src);
+});

@@ -15,3 +15,22 @@ Au focus sur le champ, vide-le et change sa couleur de fond. Lorsqu'on clique en
 
 
 // Plusieurs champs
+
+function validate(e) {
+    if (e.currentTarget.value === '') {
+        e.currentTarget.style.background = 'red';
+    } else {
+        e.currentTarget.style.background = '';
+    }
+}
+
+function reset(e) {
+    e.currentTarget.style.background = '';
+}
+
+const inputs = document.querySelectorAll('.field input');
+
+for (const input of inputs) {
+    input.addEventListener('focusout', validate);
+    input.addEventListener('focusin', reset);
+}
